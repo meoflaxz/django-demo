@@ -10,6 +10,7 @@ def post_list(request):
 
 def post_detail(request, pk):
     """Display single post"""
+    # pk is unique post id
     post = get_object_or_404(Post, pk=pk)
     context = {'post': post}
     return render(request, 'blog/post_details.html', context)
