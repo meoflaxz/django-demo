@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="post">
+        <h2>{{ post.title }}</h2>
+        <div class="post-meta">
+            By {{ post.author.username }} | {{ post.created_date|date:"F d, Y H:i" }}
+        </div>
+        <p>{{ post.content|linebreaks}} </p>
+    </div>
+    <p><a href="/"><- Back to all posts</a></p>
+{{% endblock %}}
